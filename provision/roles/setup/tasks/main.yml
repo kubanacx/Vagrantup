@@ -1,0 +1,5 @@
+---
+- name: Initial task
+  file:
+    path: '{{home_dir}}/project'
+    state: directory
