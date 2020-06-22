@@ -3,8 +3,29 @@
   file:
     path: '{{home_dir}}/project'
     state: directory
+  become: no
 
 - name: Install apache2
   apt:
     name: apache2
     state: present
+
+- name: Copy keys
+  copy:
+    src: '~/.ssh/id_rsa'
+    dest: '{{home_dir}}/.ssh/'
+    mode: 0600
+  become: no
+
+- name: Copy .gitconfig file
+  copy:
+    src: '~/.gitconfig'
+    dest: '{{home_dir}}/'
+  become: no
+
+- name: Git clone
+  git:
+    repo: git@github.com:kubanacx/Vagrantup.git
+    dest: '{{home_dir}}/project/Vagrantup'
+    accept_hostkey: yes
+  become: no
