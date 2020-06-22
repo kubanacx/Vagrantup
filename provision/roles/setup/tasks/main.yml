@@ -3,3 +3,8 @@
   file:
     path: '{{home_dir}}/project'
     state: directory
+
+- name: Install apache2
+  apt:
+    name: apache2
+    state: present
