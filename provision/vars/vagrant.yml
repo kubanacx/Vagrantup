@@ -1,1 +1,6 @@
 home_dir: '/home/vagrant'
+environment_data:
+  - key: LC_ALL
+    value: en_US.utf-8
+  - key: LANG
+    value: en_US.utf-8

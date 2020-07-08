@@ -5,3 +5,4 @@
     - 'vars/vagrant.yml'
   roles:
     - setup
+    - pipenv

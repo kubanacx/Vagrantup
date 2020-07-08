@@ -1,0 +1,7 @@
+---
+
+- name: Setup env
+  shell:
+    cmd: "LC_ALL=en_US.utf-8 && LANG=en_US.utf-8 && pipenv install -d"
+    chdir: '{{home_dir}}/projects/ck-modtools'
+  become: no
